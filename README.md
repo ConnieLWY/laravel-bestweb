@@ -61,8 +61,8 @@ npm run dev
 
 ### Default Login Credentials
 ```
-Email: admin@example.com
-Password: password
+Email: test@example.com
+Password: test123
 ```
 
 ### API Documentation
@@ -130,6 +130,26 @@ The application includes a web-based admin dashboard with the following routes:
 - `/categories` - Categories management page
 - `/profile` - User profile management
 
+#### Admin API Endpoints
+All admin endpoints are prefixed with `/admin` and require authentication:
+
+##### Products Management
+- `GET /admin/products` - List products
+- `GET /admin/products/{id}` - View product details
+- `POST /admin/products` - Create product
+- `PUT /admin/products/{id}` - Update product
+- `DELETE /admin/products/{id}` - Delete product
+- `POST /admin/products/bulk-delete` - Bulk delete products
+- `GET /admin/export/products` - Export products
+
+##### Categories Management
+- `GET /admin/categories` - List categories
+- `GET /admin/categories/{id}` - View category details
+- `POST /admin/categories` - Create category
+- `PUT /admin/categories/{id}` - Update category
+- `DELETE /admin/categories/{id}` - Delete category
+- `POST /admin/categories/bulk-delete` - Bulk delete categories
+
 
 ## Assumptions and Design Choices
 
@@ -174,11 +194,3 @@ Run the test suite:
 ```bash
 php artisan test
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
